@@ -13,7 +13,7 @@ var app = express();
 var mongoose = require("mongoose");
 var uri = "mongodb+srv://khoi12345:Khoi12345@cluster0.gnewi.mongodb.net/ATNToys";
 mongoose
-  .connect(uri, { useNewUrlParser: true })
+  .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(console.log("Connect succeed !"))
   .catch((err) => console.log("Connect failed !"));
   mongoose.set('strictQuery', true);
@@ -48,7 +48,7 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-const port = process.env.PORT || 10000;
+const port = process.env.PORT || 3001;
 app.listen(port);
 console.log("Server is running");
 
