@@ -11,7 +11,7 @@ var productRouter = require("./routes/product");
 var app = express();
 
 var mongoose = require("mongoose");
-var uri = "mongodb+srv://khoi12345:Khoi12345@cluster0.gnewi.mongodb.net/ATNToys";
+var uri = "mongodb+srv://khoi12345:Khoi12345@cluster0.gnewi.mongodb.net/";
 mongoose
   .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(console.log("Connect succeed !"))
