@@ -15,8 +15,8 @@ router.get("/allProduct", async (req, res) => {
 
 });
 
-router.post("/newProduct", async (req, res) => {
-  // var product = req.body;
+router.post("/insert", async (req, res) => {
+  var product = req.body;
   // await ProductModel.create(product)
   //   .then(console.log("Add successfully !"))
   //   .catch((err) => console.log(err));
