@@ -48,7 +48,7 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 10000;
 app.listen(port);
 console.log("Server is running");
 
