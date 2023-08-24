@@ -13,7 +13,7 @@ var app = express();
 var mongoose = require("mongoose");
 var uri = "mongodb+srv://khoi12345:Khoi12345@cluster0.gnewi.mongodb.net/";
 mongoose
-  .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true, dbName: 'ATNToys' })
   .then(console.log("Connect succeed !"))
   .catch((err) => console.log("Connect failed !"));
 mongoose.set("strictQuery", true);
@@ -48,6 +48,5 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-
-app.listen(process.env.PORT || 3003)
+app.listen(process.env.PORT || 3001)
 module.exports = app;
