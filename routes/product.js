@@ -45,4 +45,25 @@ router.post("/edit/:id", async (req, res) => {
   res.redirect("/product/allProduct");
 });
 
+router.post('/search', async (req, res) => {
+  var keyword = req.body.keyword;
+  var products = await ProductModel.find({ name : new RegExp(keyword, "i")})
+  res.render('product/allProduct', { products: products });
+})
+
+router.get('/sort/name', async (req, res) => {
+  var products = await ProductModel.find().sort();
+  res.render('product/allProduct', { products : products });
+})
+
+router.get('/sort/price/asc', async (req, res) => {
+  var products = await ProductModel.find().sort({ price: 1 });
+  res.render('product/allProduct', { products: products });
+})
+
+router.get('/sort/price/desc', async (req, res) => {
+  var products = await ProductModel.find().sort({ price: -1 });
+  res.render('product/allProduct', { products: products });
+})
+
 module.exports = router;
